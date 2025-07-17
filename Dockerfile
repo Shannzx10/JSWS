@@ -6,8 +6,8 @@ RUN git clone https://github.com/janet-lang/janet /tmp/janet \
   && cd /tmp/janet && make && make install \
   && rm -rf /tmp/janet
 
-WORKDIR /root/.janet
-RUN mkdir -p spork
+RUN mkdir -p /usr/local/lib/janet/spork && \
+  git clone https://github.com/andrewchambers/spork /usr/local/lib/janet/spork
 
 WORKDIR /app
 COPY . .
