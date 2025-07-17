@@ -1,7 +1,7 @@
 # Janet Web Server
 
 <div align="center">
-  <img src="https://janet-lang.org/imgs/janet-w200.png" alt="Janet Logo" width="120">
+  <img src="https://janet-lang.org/assets/janet-big.png" alt="Janet Logo" width="120">
   <h3>🚀 Web Server Sederhana dengan Janet</h3>
   <p>Web server yang ringan dan mudah digunakan untuk melayani file statis</p>
 </div>
@@ -27,7 +27,7 @@ Web server sederhana yang dibuat menggunakan bahasa pemrograman Janet. Server in
   <table>
     <tr>
       <td align="center">
-        <img src="https://img.icons8.com/color/48/000000/file-sharing.png" width="40">
+        <img src="https://img.icons8.com/?size=40&id=7pmR3RCNeBCM&format=png" width="40">
         <br><strong>File Statis</strong>
         <br>HTML, CSS, JS, gambar, font
       </td>
@@ -37,7 +37,7 @@ Web server sederhana yang dibuat menggunakan bahasa pemrograman Janet. Server in
         <br>404 & 500 responsif
       </td>
       <td align="center">
-        <img src="https://img.icons8.com/color/48/000000/activity-log.png" width="40">
+        <img src="https://img.icons8.com/?size=40&id=W77GEN8wSCBv&format=png" width="40">
         <br><strong>Logging</strong>
         <br>Request logging
       </td>
@@ -62,18 +62,18 @@ Web server sederhana yang dibuat menggunakan bahasa pemrograman Janet. Server in
 
 ```
 project/
-├── 📄 main.janet          # Entry point aplikasi
-├── 📄 project.janet       # Konfigurasi proyek (seperti package.json)
-├── 📄 Makefile           # Build scripts dan automation
+├── 📄 main.janet
+├── 📄 project.janet
+├── 📄 Makefile
 ├── 📂 server/
-│   ├── ⚙️ config.janet    # Konfigurasi server dan MIME types
-│   ├── 🖥️ server.janet    # Logika server TCP
-│   ├── 🎛️ handlers.janet  # Handler untuk request HTTP
-│   └── 🔧 utils.janet     # Utility functions
-├── 📂 public/             # Direktori untuk file statis
-│   └── 🏠 index.html      # Halaman utama (opsional)
-└── 📂 test/               # Test files
-    └── 🧪 run-tests.janet  # Test runner
+│   ├── ⚙️ config.janet
+│   ├── 🖥️ server.janet
+│   ├── 🎛️ handlers.janet
+│   └── 🔧 utils.janet
+├── 📂 public/
+│   └── 🏠 index.html
+└── 📂 test/
+    └── 🧪 run-tests.janet
 ```
 
 ## 📋 Prasyarat
