@@ -6,7 +6,9 @@ RUN git clone https://github.com/janet-lang/janet /tmp/janet \
   && cd /tmp/janet && make && make install \
   && rm -rf /tmp/janet
 
-RUN git clone https://github.com/janet-lang/spork /usr/local/lib/janet/spork
+RUN git clone https://github.com/janet-lang/spork /tmp/spork \
+  && cd /tmp/spork && janet build.janet install \
+  && rm -rf /tmp/spork
 
 WORKDIR /app
 COPY . .
