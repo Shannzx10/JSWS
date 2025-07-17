@@ -1,0 +1,119 @@
+# Janet Web Server Makefile
+
+# Variables
+JANET = janet
+JPM = jpm
+MAIN = main.janet
+SERVER_DIR = server
+PUBLIC_DIR = public
+TEST_DIR = test
+
+# Default target
+.PHONY: all
+all: deps build
+
+# Install dependencies
+.PHONY: deps
+deps:
+	@echo "📦 Installing dependencies..."
+	$(JPM) install
+
+# Development dependencies
+.PHONY: dev-deps
+dev-deps:
+	@echo "🔧 Installing dev dependencies..."
+	$(JPM) install judge
+
+# Run the server
+.PHONY: start
+start:
+	@echo "🚀 Starting Janet Web Server..."
+	$(JANET) $(MAIN)
+
+# Run in development mode with auto-reload
+.PHONY: dev
+dev:
+	@echo "🔄 Starting development server..."
+	$(JANET) -l $(MAIN)
+
+# Build the project
+.PHONY: build
+build:
+	@echo "🏗️ Building project..."
+	$(JPM) build
+
+# Clean build artifacts
+.PHONY: clean
+clean:
+	@echo "🧹 Cleaning build artifacts..."
+	$(JPM) clean
+	rm -rf build/
+
+# Run tests
+.PHONY: test
+test:
+	@echo "🧪 Running tests..."
+	$(JANET) $(TEST_DIR)/run-tests.janet
+
+# Install the executable
+.PHONY: install
+install: build
+	@echo "📥 Installing janet-web-server..."
+	$(JPM) install
+
+# Uninstall the executable
+.PHONY: uninstall
+uninstall:
+	@echo "🗑️ Uninstalling janet-web-server..."
+	$(JPM) uninstall
+
+# Create public directory if it doesn't exist
+.PHONY: setup
+setup:
+	@echo "⚙️ Setting up project structure..."
+	mkdir -p $(PUBLIC_DIR)
+	mkdir -p $(TEST_DIR)
+	@if [ ! -f $(PUBLIC_DIR)/index.html ]; then \
+		echo "📄 Creating sample index.html..."; \
+		echo '<!DOCTYPE html><html><head><title>Janet Web Server</title></head><body><h1>🚀 Janet Web Server Running!</h1></body></html>' > $(PUBLIC_DIR)/index.html; \
+	fi
+
+# Check Janet and JPM installation
+.PHONY: check
+check:
+	@echo "🔍 Checking Janet installation..."
+	@$(JANET) -v || (echo "❌ Janet not found. Please install Janet first." && exit 1)
+	@$(JPM) --version || (echo "❌ JPM not found. Please install JPM first." && exit 1)
+	@echo "✅ Janet environment is ready!"
+
+# Show help
+.PHONY: help
+help:
+	@echo "📚 Janet Web Server - Available Commands:"
+	@echo ""
+	@echo "  🏗️  Build Commands:"
+	@echo "    deps        Install dependencies"
+	@echo "    dev-deps    Install development dependencies"
+	@echo "    build       Build the project"
+	@echo "    clean       Clean build artifacts"
+	@echo "    install     Install the executable"
+	@echo "    uninstall   Uninstall the executable"
+	@echo ""
+	@echo "  🚀 Development Commands:"
+	@echo "    start       Start the web server"
+	@echo "    dev         Start in development mode"
+	@echo "    test        Run tests"
+	@echo ""
+	@echo "  ⚙️  Setup Commands:"
+	@echo "    setup       Create project structure"
+	@echo "    check       Check Janet installation"
+	@echo "    help        Show this help message"
+	@echo ""
+	@echo "  📖 Example Usage:"
+	@echo "    make check    # Check if Janet is installed"
+	@echo "    make setup    # Setup project structure"
+	@echo "    make deps     # Install dependencies"
+	@echo "    make start    # Start the server"
+
+# Default help when no target is specified
+.DEFAULT_GOAL := help
