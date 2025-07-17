@@ -1,5 +1,5 @@
 (def PORT "4000")
-(def HOST "localhost")
+(def HOST "0.0.0.0")
 (def PUBLIC_DIR "public")
 
 (def mime-types
