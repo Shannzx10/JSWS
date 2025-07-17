@@ -7,7 +7,9 @@ RUN git clone https://github.com/janet-lang/janet /tmp/janet \
   && rm -rf /tmp/janet
 
 RUN git clone https://github.com/janet-lang/jpm /tmp/jpm \
-  && cd /tmp/jpm && make && make install \
+  && cd /tmp/jpm \
+  && janet bootstrap.janet \
+  && cp jpm /usr/local/bin/ \
   && rm -rf /tmp/jpm
 
 WORKDIR /app
