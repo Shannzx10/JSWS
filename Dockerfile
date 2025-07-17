@@ -7,7 +7,8 @@ RUN git clone https://github.com/janet-lang/janet /tmp/janet \
   && rm -rf /tmp/janet
 
 RUN git clone https://github.com/janet-lang/spork /tmp/spork \
-  && cd /tmp/spork && janet build.janet install \
+  && cd /tmp/spork \
+  && janet -l ./bundle -e '(build)' \
   && rm -rf /tmp/spork
 
 WORKDIR /app
