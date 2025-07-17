@@ -29,7 +29,7 @@ Web server sederhana yang dibuat menggunakan bahasa pemrograman Janet. Server in
 - 📄 **Konfigurasi MIME type** yang lengkap
 - 🚀 **Performa ringan** dan mudah dikonfigurasi
 
-## 📁 Struktur Proyek
+### 📁 Struktur Proyek
 
 ```
 project/
@@ -47,7 +47,7 @@ project/
     └── 🧪 run-tests.janet
 ```
 
-## 📋 Prasyarat
+### 📋 Prasyarat
 
 - 🟢 **[Janet](https://janet-lang.org/)** harus terinstall
 - 📦 **[JPM](https://github.com/janet-lang/jpm)** (Janet Package Manager)
@@ -69,9 +69,7 @@ brew install janet
 jpm --version
 ```
 
-## 🚀 Instalasi
-
-### 🎯 Instalasi Otomatis (Recommended)
+### 🚀 Instalasi
 
 ```bash
 #Install Spork
@@ -85,7 +83,7 @@ janet main.janet
   <img src="https://img.shields.io/badge/Server-http%3A%2F%2F127.0.0.1%3A4000-brightgreen?style=for-the-badge&logo=server&logoColor=white" alt="Server URL">
 </div>
 
-## 🤝 Kontribusi
+### 🤝 Kontribusi
 
 <div align="center">
   <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge&logo=github&logoColor=white" alt="Contributions Welcome">
@@ -99,7 +97,7 @@ Jika Anda ingin berkontribusi pada proyek ini:
 4. 📤 **Push ke branch**
 5. 🔄 **Buat Pull Request**
 
-## 📄 Lisensi
+### 📄 Lisensi
 
 <div align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="MIT License">
@@ -107,7 +105,7 @@ Jika Anda ingin berkontribusi pada proyek ini:
 
 Proyek ini bersifat open source dan dapat digunakan sesuai kebutuhan.
 
-## ⚠️ Catatan Penting
+### ⚠️ Catatan Penting
 
 <div align="center">
   <img src="https://img.shields.io/badge/Environment-Development-orange?style=for-the-badge&logo=development&logoColor=white" alt="Development Environment">
