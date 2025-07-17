@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 4000
 
-CMD ["janet", "server.janet"]
+CMD ["janet", "main.janet"]
