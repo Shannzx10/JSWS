@@ -6,10 +6,14 @@ RUN git clone https://github.com/janet-lang/janet /tmp/janet \
   && cd /tmp/janet && make && make install \
   && rm -rf /tmp/janet
 
-RUN git clone https://github.com/janet-lang/spork /tmp/spork \
-  && cd /tmp/spork \
-  && janet -l ./bundle -e '(build)' \
-  && rm -rf /tmp/spork
+RUN git clone https://github.com/janet-lang/jpm /tmp/jpm \
+  && cd /tmp/jpm \
+  && janet bootstrap.janet \
+  && rm -rf /tmp/jpm
+
+RUN jpm install spork
+
+ENV JANET_PATH=/usr/local/lib/janet
 
 WORKDIR /app
 COPY . .
